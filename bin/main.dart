@@ -67,8 +67,7 @@ Future<void> run(args.ArgResults $commandResults) async {
   await run.run('specgen');
   sys.setCwd($cwd);
   await run.run$(
-    'dart',
-    arguments: [$filePath, ...$commandResults.rest.toList().sublist(1)],
+    ['dart', $filePath, ...$commandResults.rest.toList().sublist(1)],
     //autoQuote: false,
   );
 }

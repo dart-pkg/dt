@@ -3,8 +3,8 @@ description: |-
   [dt]
   Trivial tool for dart.
 version: 2025.427.1746
-homepage:
-repository: "https://github.com/dart-pkg/dt"
+homepage: 
+repository: https://github.com/dart-pkg/dt
 environment:
   sdk: ^3.7.2
 executables:

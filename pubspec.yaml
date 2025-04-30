@@ -2,7 +2,7 @@ name: dt
 description: |-
   [dt]
   Trivial tool for dart.
-version: 2025.428.1735
+version: 2025.430.1940
 homepage: 
 repository: https://github.com/dart-pkg/dt
 environment:
@@ -11,8 +11,8 @@ executables:
   dt: main
 dependencies:
   args: ^2.7.0
-  std: ^2025.428.1703
-  sys: ^2025.428.1721
+  std: ^2025.430.1833
+  sys: ^2025.430.1853
 dev_dependencies:
   lints: ^5.1.1
   output: ^2025.430.1731

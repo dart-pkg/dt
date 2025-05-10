@@ -123,3 +123,18 @@
 -  output: ^2025.430.1731
 +  output: ^2025.502.1958
 ```
+
+## 2025.510.2108
+
+- Update package dependencies
+
+```
+--- a/pubspec.yaml
++++ b/pubspec.yaml
+-version: 2025.503.30
++version: 2025.510.2108
+-  std: ^2025.502.2358
+-  sys: ^2025.503.6
++  std: ^2025.504.1244
++  sys: ^2025.504.1255
+```

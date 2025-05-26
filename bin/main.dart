@@ -1,13 +1,13 @@
 #! /usr/bin/env my-dart
 
 import 'dart:core';
-import 'package:sys/sys.dart' as sys_sys;
+import 'package:std/std.dart' as std_std;
 import 'package:args/args.dart' as args_args;
 import 'package:std/command_runner.dart' as std_command_runner;
 import 'package:std/misc.dart' as std_misc;
 
-main(List<String> $args) async {
-  if (sys_sys.isInDebugMode) {
+Future<void> main(List<String> $args) async {
+  if (std_std.isInDebugMode) {
     $args = [
       'script',
       r'D:\home11\dart\hello\lib\my.api-call.dart',
@@ -59,13 +59,13 @@ Future<void> run(args_args.ArgResults $commandResults) async {
   }
   String $filePath = $commandResults.rest[0];
   //$filePath = $filePath.replaceAll('/', '\\');
-  $filePath = sys_sys.pathFullName($filePath);
-  String $libDir = sys_sys.pathDirectoryName($filePath);
-  String $cwd = sys_sys.getCwd();
-  sys_sys.setCwd($libDir);
+  $filePath = std_std.pathFullName($filePath);
+  String $libDir = std_std.pathDirectoryName($filePath);
+  String $cwd = std_std.getCwd();
+  std_std.setCwd($libDir);
   final run = std_command_runner.CommandRunner(useUnixShell: false);
   await run.run('specgen');
-  sys_sys.setCwd($cwd);
+  std_std.setCwd($cwd);
   await run.run$(
     ['dart', $filePath, ...$commandResults.rest.toList().sublist(1)],
     //autoQuote: false,
@@ -100,10 +100,10 @@ Future<void> projDir(args_args.ArgResults $commandResults) async {
     throw 'File name count is ${$commandResults.rest.length}: ${$commandResults.rest}';
   }
   String $filePath = $commandResults.rest[0];
-  String $fileDir = sys_sys.pathDirectoryName($filePath);
-  String $fn = sys_sys.pathFileName($fileDir);
+  String $fileDir = std_std.pathDirectoryName($filePath);
+  String $fn = std_std.pathFileName($fileDir);
   if ($fn == 'bin' || $fn == 'lib' || $fn == 'test') {
-    print(sys_sys.pathDirectoryName($fileDir));
+    print(std_std.pathDirectoryName($fileDir));
   } else {
     print($fileDir);
   }
